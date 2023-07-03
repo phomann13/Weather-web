@@ -1,0 +1,159 @@
+
+body{
+    background-color: #4b75d6;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;;
+}
+.container{
+    position: relative;
+    height: 99px;
+    width: 400px;
+    margin: auto;
+    background-color: white;
+    max-width: fit-content;
+    border-radius: 20px;
+    padding: 28px 32px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
+}
+
+
+.search-box{
+    padding-top: 25px;
+    width: 100%;
+    height: min-content;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s ease-out;
+}
+.searchbar{
+    border: none;
+    width: 80%;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    font-weight: 500px;
+    outline: none;
+}
+
+.search-box input::placeholder{
+    font-weight: 500px;
+    font-size: 20px;
+    text-transform: capitalize;
+    outline: none;
+
+}
+.search-box i{
+    position: absolute;
+    font-size: 28px;
+}
+.search-box button{
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    transition: .5s ease;
+}
+.search-box button:hover{
+    color: #fff;
+    background: #06283D;
+}
+
+.weather-box{
+    text-align: center;
+}
+.weather-box img{
+    font-size: 4rem;
+    height: 150px;
+    width: 150px;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.weather-box .temp{
+    position: relative;
+    color: #06283D;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-left: -16px;
+}
+.weather-box .description{
+    position: relative;
+    color: #06283D;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-left: -16px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.details{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.details .humidity, .details .wind, .details .feels{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+.details i{
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.details span{
+    font-size: 22px;
+    font-weight: 500;
+}
+.details p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.weather-box, .details{
+    scale: 0;
+    opacity: 0;
+}
+
+
+.error-not-found{
+   scale: 0;
+    opacity: 0;
+    display: none;
+}
+.error-not-found img{
+    margin-top: 30px;
+    width: 60%;
+    
+}
+
+.fadeIn{
+    animation: .5 fadeIn forwards; 
+    animation-delay: .5s;
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+
