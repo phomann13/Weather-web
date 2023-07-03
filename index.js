@@ -12,7 +12,7 @@ searchbar.addEventListener("keydown", function(event) {
         
   const APIKey = "77f4ced269974384b01224258232906"
   const city = document.querySelector('.search-box input').value;
-  
+  const link = `http://api.weatherapi.com/v1/current.json?key=77f4ced269974384b01224258232906&q=XYZ&aqi=no`
   if (city == ''){ //no city
       return;
   }
@@ -22,15 +22,16 @@ searchbar.addEventListener("keydown", function(event) {
   fetch(`http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}&aqi=no`)
   .then(response => response.json())
   .then(json => {
-      
-      if (json.cod === '404') {
+    
+      if (json.error != null) {
+
           container.style.height = '400px';
           weatherBox.style.display = 'none';
           weatherDetails.style.display = 'none';
           error404.style.display = 'block';
           error404.classList.add('fadeIn');
-          return;
-      }
+          
+      } else {
 
 
       error404.style.display = 'none';
@@ -62,7 +63,7 @@ searchbar.addEventListener("keydown", function(event) {
       weatherDetails.classList.add('fadeIn');
       container.style.height = '590px';
 
-
+      }
   });
     }
 
@@ -73,7 +74,7 @@ search.addEventListener('click', () => {
     //alert("Button pres")
     const APIKey = "77f4ced269974384b01224258232906"
     const city = document.querySelector('.search-box input').value;
-    
+       
     if (city == ''){ //no city
         return;
     }
@@ -83,17 +84,18 @@ search.addEventListener('click', () => {
     fetch(`http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}&aqi=no`)
     .then(response => response.json())
     .then(json => {
-        
-        if (json.cod === '404') {
+        alert("Run")
+        if (json.error != null) {
+            alert("error")
             container.style.height = '400px';
             weatherBox.style.display = 'none';
             weatherDetails.style.display = 'none';
             error404.style.display = 'block';
             error404.classList.add('fadeIn');
-            return;
-        }
+          
+        } else {
 
-
+            alert("No Error")
         error404.style.display = 'none';
         error404.classList.remove('fadeIn');
         
@@ -123,7 +125,7 @@ search.addEventListener('click', () => {
         weatherDetails.classList.add('fadeIn');
         container.style.height = '590px';
 
-
+          }
     });
 
 

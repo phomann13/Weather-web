@@ -134,13 +134,13 @@ body{
 
 
 .error-not-found{
-   scale: 0;
+    scale: 0;
     opacity: 0;
     display: none;
 }
 .error-not-found img{
     margin-top: 30px;
-    width: 60%;
+    width: 100%;
     
 }
 
@@ -148,7 +148,9 @@ body{
     animation: .5 fadeIn forwards; 
     animation-delay: .5s;
 }
-
+p{
+    text-align: center;
+}
 @keyframes fadeIn {
     to {
         scale: 1;
